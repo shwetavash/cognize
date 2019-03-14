@@ -1,0 +1,507 @@
+[{"category":"Java",
+"question":"1.What will happen if you put return statement or System.exit () on try or catch block? Will finally block execute?",
+"answer":"Finally block will execute even if you put a return statement in the try block or catch block but finally block won't run if you call System.exit form try or catch."},
+
+{"category":"Java",
+"question":"2.What is the difference between final, finally and finalize() in Java?",
+"answer":"final - A final variable acts as a constant, a final class is immutable and a final method cannot be ovrriden while doing inheritance. finally - handles exception. The finally block is optional and provides a mechanism to clean up regardless of what happens within the try block (except System.exit(0) call). Use the finally block to close files or to release other system resources like database connections, statements etc. finalize() - method belongs to Object class. The method that is invoked while doing the garbage collection of the object. It is used for allowing it to clean up its state. Use case will be to free connection pools , deallocate resources etc."},
+
+{"category":"Java",
+"question":"3.What is the difference between String, StringBuilder and StringBuffer?",
+"answer":"String is immutable object(once created cannot be changed) while StringBuffer and StringBuilder are mutable, so their value can be changed after creation. The object created as a String is stored in the Constant String Pool while for StringBuffer and StringBuilder the object created is stored in heap. String and StringBuffer are thread safe so it cannot be used simultaneously by two threads, while StringBuilder is not. Being thread safe StringBuffer is slow due to thread safe property."},
+
+{"category":"Java",
+"question":"4.What is meant by Java is platform independent language?",
+"answer":"It means that we can write and compile the Java code in one platform like Windows but can execute the class in any other supported platform like Linux, Solaris etc."},
+
+{"category":"Java",
+"question":"5.Give different types of variables.",
+"answer":"Different types of variables are local variables(defined inside methods, constructors, or blocks and these are declared and initialized within the block and destroyed when method or block is completed), instance variables(variables within a class but declared outside any method and are instantiated when class is loaded) and class variables(valriables declared within a class outside any method but with static keyword, so these belong to the class but not specifically to the instance)."},
+
+{"category":"Java",
+"question":"6.What is garbage collection in Java?",
+"answer":"When a Java process is started using java command, memory is allocated to it. A part of this memory is used to create heap space which is used to allocate memory to objects, variables etc. which are created in the program. But to due to limited amount of memory of the system, garbage collection is used. This process reclaims the memory from objects and variables which are no longer used. "},
+
+{"category":"Java",
+"question":"7.List the four principles of OOPS(Object Oriented Programming).",
+"answer":"The four principles of OOPS are abstraction, encapsulation, polymorphism and inheritance."},
+
+{"category":"Java",
+"question":"8.What is abstraction?",
+"answer":"Abstraction is a process of hiding the implementation details from the user, only the functionality will be provided to the user. In other words user will have the information on what the object does instead of how it does it. In Java abstraction is achieved using abstract classes and interfaces."},
+
+{"category":"Java",
+"question":"9.What is inheritance?",
+"answer":"In Java inheritance is a mechanism in which one object acquires all the properties and behaviours of parent object. It helps to make information manageable in a hierarchical order.The class which inherits the properties of other is called the subclass() and the class whose properties are inherited is called superclass."},
+
+{"category":"Java",
+"question":"10.What is polymorphism?",
+"answer":"It is the ability of an object to take on many different forms.Example when a parent class reference is used to refer to a child class object. The Java object that can pass more than one IS-A test would be polymorphic. So all Java objects are polymorphic as they are of ther own type and of class Object type."},
+
+{"category":"Java",
+"question":"11.What is encapsulation?",
+"answer":"Encapsulation is a method of wrapping the variables and the methods together as a single unit. In encapsulation the variables of a class is hidden from other classes by declaring them as private and can be accessed only through the public getter and setter methods to modify and view the variables values."},
+
+{"category":"Java",
+"question":"12.What is the difference between equals() and ==?",
+"answer":"== operator is used to compare the references of the objects but the method equals() compares the value of the object. With reference to the String class- equals() method compares the value inside String instances i.e the contents of character array are compared whether the two object references point to the same String instance or different. But '==' operator compares the value of the two object references. If two object references point to same String instance then result of operator is true, but if they point to different String instances then the result is false evenif the contents of character array of String are same."},
+
+{"category":"Java",
+"question":"13.What is the difference between overriding and overloading?",
+"answer":"Overloading - Two or more methods have same name but different argument list. It happens at compile time.Static, private and final methods can be overloaded.Return type does not matter in this. Overriding- Two or more methods have same name and same argument list but they are in different classes(parent and child class).It happens at runtime.Static, private and final methods cannot be overridden as they are not visible in child class. Return type can only be very specific in overriding."},
+
+{"category":"Java",
+"question":"14.What makes Java 'write once, run anywhere'?",
+"answer":"The bytecode gives Java this nature. Java is compiled to a byte code, which is intermediate language between source code and machine code. This byte code is not platform specific and so can be fed to any platform."},
+
+{"category":"Java",
+"question":"15.What is singleton design pattern?",
+"answer":"The singleton pattern is a design pattern that restricts the instantiation of a class to one object. This is useful when exactly one object is needed to coordinate actions across the system. To achieve sngleton pattern we define protected or private constructor, private static attribute, public static accessor functions and then do lazy initialization i.e creation on first use."},
+
+{"category":"Java",
+"question":"16.What is static method?",
+"answer":"A static variable or method belongs to a class rather than the instance of the class. The static method can be invoked without the need to create an object of the class. It can access static variables and also can change their value."},
+
+{"category":"Java",
+"question":"17.What is an Exception?",
+"answer":"Exceptions are events that occur during the execution of programs that disrupt the normal flow of instructions (e.g. divide by zero, array access out of bound, etc.). In Java, an exception is an object that wraps an error event that occurred within a method and contains: Information about the error including its type."},
+
+{"category":"Java",
+"question":"18.What are checked exceptions?",
+"answer":"These are the exceptions which are checked at the compile time. If a method is throwing a checked exception then it should handle the exception using try-catch block or it should declare the exception using throws keyword, otherwise the program will give a compilation error. For example FileNotFoundException. "},
+
+{"category":"Java",
+"question":"19.What are unchecked exceptions?",
+"answer":"These are the exceptions that are not checked at the compile time but are thrown at run time. So if a method is throwing an unchecked exception and even if the exception isn't taken care of , the program will still compile successfully. Most of the time these error occur due to bad data provided by the user during user program interaction. So a good programmer would judge the conditions for bad data in advance that can cause the mthod to throw these unchecked exceptions and handle them appropriately."},
+
+{"category":"Java",
+"question":"20.What is the difference between stack and heap in Java?",
+"answer":"Stack and heap are different memory areas in the JVM and they are used for different purposes. The stack is used to hold method frames and local variables while objects are always allocated memory from the heap. The stack is usually much smaller than heap memory and also didn't shared between multiple threads, but heap is shared among all threads in JVM."},
+
+{"category":"Java",
+"question":"21.What is the difference between throw and throws in Exception handling?",
+"answer":"Throws keyword is used in method signature to declare the type of exception possibly thrown by the method while throw is used to actually throw an Exception in Java code. Using throws keyword we can declare multiple Exceptions thrown by the method whereas throw can be used for throwing only one instance of the Exception."},
+
+{"category":"Java",
+"question":"22.What is a transient variable?",
+"answer":"It marks a member variable not to be serialized when it is persisted to streams of bytes. When an object is transferred through the network, the object needs to be 'serialized'. Serialization converts the object state to serial bytes. Those bytes are sent over the network and the object is recreated from those bytes. Member variables marked by the java transient keyword are not transferred, they are lost intentionally."},
+
+{"category":"Java",
+"question":"23.What is the difference between abstract class and an interface?",
+"answer":"A class is called abstract when it is declared with keyword abstract. It contains one or more abstract methods but it can also contain concrete methods. Whereas an interface can only contain abstract methods. A class can extend only one abstract class but can implement multiple interfaces. "},
+
+{"category":"Java",
+"question":"24.What is gc()?",
+"answer":"gc() is a daemon thread.gc() method is defined in System class that is used to send request to JVM to perform garbage collection."},
+
+{"category":"Java",
+"question":"25.What is reflection in Java?",
+"answer":"Java Reflection makes it possible to inspect classes, interfaces, fields and methods at runtime, without knowing the names of the classes, methods etc. at compile time. It is also possible to instantiate new objects, invoke methods and get/set field values using reflection."},
+
+{"category":"Java",
+"question":"26.What is the difference between Set and List?",
+"answer":"Set contain only unique elements while List can contain duplicate elements. Set is unordered while List is ordered . List maintains the order in which the objects are added ."},
+
+{"category":"Java",
+"question":"27.What is the difference between HashMap and Hashtable?",
+"answer":"HashMap allows one null key and any number of null values while Hashtable does not allow null keys and null values. HashMap is not synchronized or thread-safe while Hashtable is synchronized and thread-safe ."},
+
+{"category":"Java",
+"question":"28.What is the difference between Array and ArrayList?",
+"answer":"Array is static in size while ArrayList is dynamic in size. Array can contain primitive data types while ArrayList can not contain primitive data types."},
+
+{"category":"Java",
+"question":"29.What is the difference between wait and sleep in Java?",
+"answer":"Both are used to pause currently running thread, sleep() is actually meant for short pause because it doesn't release lock, while wait() is meant for conditional wait and that's why it release lock which can then be acquired by another thread to change the condition on which it is waiting."},
+
+{"category":"Java",
+"question":"30.What is the difference between List and Set?",
+"answer":"List can contain duplicate elements whereas Set contains only unique elements."},
+
+{"category":"JDBC",
+"question":"1.What is JDBC?",
+"answer":"JDBC(Java Database Connectivity) is a standard Java API for communicating to relational database using Database specific JDBC drivers. This API has java classes and interfaces which are part of java.sql and javax.sql package and provide medium to the programmer to interact with database."},
+
+{"category":"JDBC",
+"question":"2.What is connection pooling?",
+"answer":"Connection pooling is the mechanism by which we reuse the recourse like connection objects  which are needed to make connection with database .In this mechanism client are not required every time make new connection and then interact with database instead of that connection objects are stored in connection pool and client will get it from there. so it’s a best way to share a server resources among the client and enhance the application performance."},
+
+{"category":"JDBC",
+"question":"3.What are the common components of JDBC API?",
+"answer":"The common interfaces and classes of JDBC API are DriverManager, Driver, Coonection, Statement, ResultSet, SQLException."},
+
+{"category":"JDBC",
+"question":"4.What is a JDBC Driver Manager?",
+"answer":"JDBC Driver Manager manages a list of database drivers. It matches requests from the java application with appropriate database driver using communication subprotocol. Database connection is established using the first driver that recognizes a certain subprotocol under JDBC."},
+
+{"category":"JDBC",
+"question":"5.What is a JDBC Driver?",
+"answer":"JDBC Driver is an interface which enables a Java application to interact with a database. To connect with a database, JDBC uses drivers for each individual database. JDBC driver gives a coonection to the database and implements the protocol to transfer the query and result between client and database."},
+
+{"category":"JDBC",
+"question":"6.What is a JDBC Connection?",
+"answer":"A JDBC Connection is an interface having methods for contacting a database. The connection object is the communication context, so all communication with database is using this connection object only."},
+
+{"category":"JDBC",
+"question":"7.What is a JDBC ResultSet?",
+"answer":"ResultSet is an  interface java.sql.ResultSet. It is a table of data that holds the data retrieved from database after the SQL query is executed using Statement objects. It acts as an iterator to fetch the data which object received from database query."},
+
+{"category":"JDBC",
+"question":"8.What is JDBC Statement?",
+"answer":"JDBC Statement is the object used for executing a static SQL statement and returning the results it produces."},
+
+{"category":"JDBC",
+"question":"9.What is a PreparedStatement?",
+"answer":"PreparedStatement is an object that stores a precompiled SQL statement. This object can then be used to efficiently execute this statement multiple times for different arguments. These are more secure because they use bind variables which can prevent SQL injection attack."},
+
+{"category":"JDBC",
+"question":"10.What are the ways to register a JDBC driver?",
+"answer":"To register the installed driver with our program either use the static registerDriver() method of the JDBC DriverManager class or use Class.forName() method which dynamically loads the driver's class file into memory which automatically registers it. The second method is preferrable as it makes the driver registration configurable and portable."},
+
+{"category":"JDBC",
+"question":"11.What is the difference between Statement and PreparedStatement?",
+"answer":"Statement is the object used for executing a static SQL statement and return the results it produces whereas in PreparedStatement a SQL statement is precompiled and stored as PreparedStatement object. PreparedStatement is faster than Statement and this difference is more visible when we reuse the PreparedStatement or use it's batch processing methods for executing multiple queries. PreparedStatement provides different types of setter methods to set the input parameters for the query. So PreparedStatement helps in writing object oriented code with these setter methods. Whereas in Statement we have to use String Concatenation to create the query, this is error prone in case when multiple parameters are to be set."},
+
+{"category":"JDBC",
+"question":"12.What are callable statements?",
+"answer":"The interface CallableStatement is used to execute SQL stored procedures and functions. The JDBC API provides a stored procedure SQL escape syntax that allows stored procedures to be called in a standard way for all RDBMSs."},
+
+{"category":"JDBC",
+"question":"13.What are different types of JDBC drivers?",
+"answer":"There are 4 types of JDBC drivers. Type 1-JDBC/ODBC- The JDBC type 1 driver, also known as the JDBC-ODBC bridge, is a database driver implementation that employs the ODBC driver to connect to the database. The driver converts JDBC method calls into ODBC function calls.The driver is platform-dependent as it makes use of ODBC which in turn depends on native libraries of the underlying operating system the JVM is running upon. Type 2-Native API driver- is a database driver implementation that uses the client-side libraries of the database. The driver converts JDBC method calls into native calls of the database API. For example: Oracle OCI driver is a type 2 driver. Type 3-Network Protocol Driver-The JDBC type 3 driver, also known as the Pure Java driver for database middleware, is a database driver implementation which makes use of a middle tier between the calling program and the database. The middle-tier (application server) converts JDBC calls directly or indirectly into the vendor-specific database protocol. Type 4- Database Protocol Driver(Pure Java Driver)- The JDBC type 4 driver, also known as the Direct to Database Pure Java Driver, is a database driver implementation that converts JDBC calls directly into a vendor-specific database protocol. Written completely in Java, type 4 drivers are thus platform independent. They install inside the Java Virtual Machine of the client. This provides better performance than the type 1 and type 2 drivers as it does not have the overhead of conversion of calls into ODBC or database API calls. Unlike the type 3 drivers, it does not need associated software to work."},
+
+{"category":"JDBC",
+"question":"14.What setAutoCommit method does?",
+"answer":"A connection is in autocommit mode when it is created, that is, each individual SQL statement is treated as a transaction and is automatically commited after its execution. But by setting auto commit to false by this method SQL statements are not commited until a programmer explicitly commits the transaction by calling the method."},
+
+{"category":"JDBC",
+"question":"15.Why closing of JDBC connections have to be done in finally block?",
+"answer":"A programmer needs to close the connection, the statement and the resultset in the finally block. The connection comes from a pool, so to send it back to the connection pool to be reused we need to first close it. By putting these in finally block we ensure that connections are properly closed even if an exception is thrown by the code."},
+
+{"category":"JDBC",
+"question":"16.What is connection pooling?",
+"answer":"Connection pooling is a process in which we reuse the connection objects needed to make connection with database. So client are not required every time to make new connection and the interact with database, but instead the connection objects are stored in the connection pool and client can take it from there.So server resources are shared and applcation performance is enhanced."},
+
+{"category":"JDBC",
+"question":"17.What is the meaning of dirty read in database?",
+"answer":"Dirty read means reading a wrong value in database. So it means a transaction reads a value in the database when the other transaction is executing and changing this value and has not done commit or rollback. So the value which first transaction has read may be invalid. "},
+
+{"category":"Servlets",
+"question":"1.What is a Servlet?",
+"answer":"A servlet is a Java programming language class that is used to extend the capabilities of servers that host applications accessed by means of a request-response programming model. Although servlets can respond to any type of request, they are commonly used to extend the applications hosted by web servers. For such applications, Java Servlet technology defines HTTP-specific servlet classes.The javax.servlet and javax.servlet.http packages provide interfaces and classes for writing servlets. All servlets must implement the Servlet interface, which defines life-cycle methods. When implementing a generic service, you can use or extend the GenericServlet class provided with the Java Servlet API. The HttpServlet class provides methods, such as doGet and doPost, for handling HTTP-specific services."},
+
+{"category":"Servlets",
+"question":"2.Explain life cycle of a Servlet?",
+"answer":"The life cyce of a servlet is the process from its creation uptil its destruction.It is controlled by the container in which the servlet has been deployed. When a request is mapped to a servlet, the container performs the following steps.1.If an instance of the servlet does not exist, the web container a).Loads the servlet class.b).Creates an instance of the servlet class.c).Initializes the servlet instance by calling the init method. 2.Invokes the service method, passing request and response objects.3.If the container needs to remove the servlet, it finalizes the servlet by calling the servlet’s destroy method and then it is garbage collected by the garbage collector of the JVM."},
+
+{"category":"Servlets",
+"question":"3.When is the servlet object created?",
+"answer":"Only one object of servlet is created by the web container or the servlet container at the time of first request."},
+
+{"category":"Servlets",
+"question":"4.What are the uses of servlet?",
+"answer":"The uses of servlet are - Providing dynamic content, e.g. returning the results of a database query to the client. Processing and/or storing data submitted by an HTML form.A Servlet can handle multiple request concurrently and be used to develop high performance system. Send implicit HTTP response to the browser client. This includes telling the browsers or other clients what type of document is being returned (e.g., HTML), setting cookies and caching parameters etc. Send the explicit data like document to the browser client. The document can be sent in various formats like HTML, XML, GIF etc."},
+
+{"category":"Servlets",
+"question":"5.When is the init() method of the servlet called?",
+"answer":"The init() method of the servlet is called only once when the servlet is created on the first user request. Then the init() method is not called on each user request."},
+
+{"category":"Servlets",
+"question":"6.What is the difference between Get and Post method?",
+"answer":"In Get method(doGet) the parameters are appended to the URL and sent along with header information.  The entire form submission gets encapsulated in one URL. The query to the server is not secure (parameters and values are not encrypted), fast (since same connection is used), quick, and easy(it allows bookmarks). The amount of information that can be sent back is limited. While in Post(doPost) method name value pairs are sent inside the body of the HTTP request. There is no size limitation on form's output and is used to update or post information to the server and send large amount of data to the server to be processed. It is more secure as the parameters are encrypted.  It is possible to send files and even binary data such as serialized Java objects."},
+
+{"category":"Servlets",
+"question":"7.What is the difference between ServletConfig and ServletContext?",
+"answer":"ServletConfig provide the information about the configuration of a servlet which is defined inside the web.xml file or we can say deployment descriptor.its a specific object for each servlet. Whereas ServletContext is an application specific object which is shared by all the servlet belongs to one application in one JVM . This is a single object which represents our application and all the servlet access application specific data using this object.servlet also use their method to communicate with the container."},
+
+{"category":"Servlets",
+"question":"8.What is a Session?",
+"answer":"A session is an object which is used by a servlet and it is used to track user interaction with a web application across multiple HTTP requests."},
+
+{"category":"Servlets",
+"question":"9.When is service() method of servlet called?",
+"answer":"Each time the server receives a request for a servlet, the server spawns a new thread and calls service. The service() method checks the HTTP request type GET, POST, PUT, DELETE, etc. and calls doGet, doPost, doPut, doDelete, etc. methods respectively."},
+
+{"category":"Servlets",
+"question":"10.What is the difference between GenericServlet and HttpServlet?",
+"answer":"GenericServlet is an abstract class that is extended by HttpServlet to provide HTTP protocol specific methods.It does not include protocol specific methods for handling request parameters, cookies, sessions and setting response headers. It is not specific to any protocol. Whereas HttpServlet is an abstract class that simplifies writing HTTP servlets. It extends GenericServlet base class and provides a framework for handling HTTP protocol. It passes generic service method requests to doGet() or doPost() methods appropriately. It supports HTTP and HTTPS protocol."},
+
+{"category":"Servlets",
+"question":"11.Are servlets thread safe? If not how can we ensure thread safety in servlets?",
+"answer":"Since init() and destroy() method of servlets are called only once on creation and destruction of servlets, so we need not worry about thread safety. But service methods like doGet() and doPost() are called in each user request and servlets are multithreaded, so we should synchronize the shared resources to attain thread safety  in servlets. The local variables in service methods are specific to each thread so they do not require to be synchronized."},
+
+{"category":"Servlets",
+"question":"12.In web.xml what is the meaning of the tag <load-on-startup>1</load-on-startup>?",
+"answer":"Whenever we request for any servlet the servlet container will initialize the servlet and load it which is defined in our config file called web.xml .By default it will not initialize when our context is loaded. load-on-startup means that the servlet must be loaded and initialized on startup of the webapp (i.e. as soon as it is deployed, without waiting for a request to the servlet). The number indicates the order of the initialisations. If another servlet has 1, it will be loaded before. If another has 3, it will be loaded after."},
+
+{"category":"Servlets",
+"question":"13.Why is HttpServlet declared abstract class?",
+"answer":"The HttpServlet class is declared abstract because the default implementations of the main service methods do nothing and must be overridden. This is a convenience implementation of the Servlet interface, which means that developers do not need to implement all service methods. If your servlet is required to handle doGet() requests for example, there is no need to write a doPost() method too."},
+
+{"category":"Servlets",
+"question":"14.How to redirect a request from a servlet to another servlet?",
+"answer":"Page redirection is generally used when a document moves to a new location and we need to send the client to this new location or may be because of load balancing. The simplest way of redirecting a request to another page is using method sendRedirect() of response object."},
+
+{"category":"Servlets",
+"question":"15.What is lazy loading?",
+"answer":"The servlets are not initialized by the container from the start. It happens when the servlet is requested for the first time. This is called lazy loading."},
+
+{"category":"Servlets",
+"question":"16.What are the different methods of session tracking?",
+"answer":"The different methods of session tracking are- cookies, URL rewriting, HttpSession and hidden form fields."},
+
+{"category":"Servlets",
+"question":"17.What is a deployment descriptor?",
+"answer":"A deployment descriptor is an XML document with an .xml extension. It defines a component's deployment settings. It declares transaction attributes and security authorization for an enterprise bean. The information provided by a deployment descriptor is declarative and therefore it can be modified without changing the source code of a bean. The JavaEE server reads the deployment descriptor at run time and acts upon the component accordingly."},
+
+{"category":"Servlets",
+"question":"18.What is the difference between forward() method and sendRedirect() method?",
+"answer":"Redirect request is used to redirect to resources to different servers or domains. This transfer of control task is delegated to the browser by the container. That is, the redirect sends a header back to the browser / client. This header contains the resource url to be redirected by the browser. Then the browser initiates a new request to the given url. Whereas Forward request is used to forward to resources available within the server from where the call is made. This transfer of control is done by the container internally and browser / client is not involved."},
+
+{"category":"Servlets",
+"question":"19.What is the difference between JSP and Servlets ?",
+"answer":"Serlvet is html in Java but JSP is Java in html. JSP is a webpage scripting language that can generate dynamic content while Servlets are Java programs that are already compiled which also creates dynamic web content. Servlets run faster compared to JSP. JSP can be compiled into Java Servlets. It’s easier to code in JSP than in Java Servlets. In MVC, jsp act as a view and servlet act as a controller. JSP are generally preferred when there is not much processing of data required. But servlets are best for use when there is more processing and manipulation involved. The advantage of JSP programming over servlets is that we can build custom tags which can directly call Java beans. There is no such facility in servlets. We can achieve functionality of JSP at client side by running JavaScript at client side. There are no such methods for servlets."},
+
+{"category":"Servlets",
+"question":"20.What is Servlet mapping?",
+"answer":"Servlet mapping maps URL patterns with the servlets. If there is a request from the client, servlet container decides on which application it needs to map."},
+
+{"category":"Spring",
+"question":"1.What is Spring Framework?",
+"answer":"Spring framework is an open source application framework for enterprise Java application. It takes care of the comprehensive infrastructure part and let the programmer focus on the application part. It has layered architecture which allows the programmer to be selective for the components to choose and also provides POJO based programming model providing a loose coupling between the components."},
+
+{"category":"Spring",
+"question":"2.What are the features of Spring Framework?",
+"answer":"Lightweight-It is lightweight as compared to EJB. This is beneficial in deploying applications with Spring on computers with limited memory and CPU resources. Inversion of Control- This is the strongest feature of Spring. This helps to achieve loose coupling because objects give their dependencies on their own instead of objects looking out for dependent objects.Spring container-It contains and manages the life cycle and configuration of application objects.MVC Framework- It is well designed MVC framework which provides great alternative to other web frameworks like Struts etc. Spring has support for transacton management, Exception Handling, JDBC operations etc with very little configurations by using annotations or by Spring bean configuration file."},
+
+{"category":"Spring",
+"question":"3.What is Dependency Injection?",
+"answer":"Dependency Injection is an aspect of Inversion Of Control where objects define their dependencies but does not worry about how to get those dependencies, and now it is the responsiblity of Spring to provide the required dependencies for creating objects.So the responsibilty of creating objects is shifted from our application code to Spring container so it is also called Inversion of Control. Dependency Injection allows us to remove the hard coded dependencies and make our application loosely coupled and maintainable. So dependency resolution is moved from compile time to run time and major advantage being that it makes testing easier with unit tests."},
+
+{"category":"Spring",
+"question":"4.What are the different types of Dependency Injection?",
+"answer":"Different types of Dependency Injection/ IoC are Constructor based dependency injection and setter based dependency injection. In constructor based dependency injection container invokes a class constructor with a number of arguments, and each argument represent a dependency on other class. Whereas is setter based dependency injection container calls setter methods to inject the dependencies.In bean configuration file the beans are declared and the dependency is set via setter injection(property tag)."},
+
+{"category":"Spring",
+"question":"5.What are the advantages of Dependency Injection?",
+"answer":"The advantages of dependency injection are more reusable code, more testable code using mock objects, reduced dependency of components on each other, that is loosely coupled architecture and different implementation can be achieved using configuration without changng the dependent code."},
+
+{"category":"Spring",
+"question":"6.What is Spring IoC container?",
+"answer":"The interface org.springframework.context.ApplcationContext represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans and manage their lifecycle from creation till destruction. The container gets its instructions on what objects to instantiate, configure, and assemble by reading configuration metadata. The configuration metadata is represented in XML, Java annotations, or Java code. It allows you to express the objects that compose your application and the rich interdependencies between such objects."},
+
+{"category":"Spring",
+"question":"7.What are two types of IoC containers? Explain.",
+"answer":"The two types of IoC containers are BeanFactory container and ApplicationContext container. The BeanFactory interface provides an advanced configuration mechanism capable of managing any type of object. It is usually preferred where the resources are limited like mobile devices or applet based applications. Whereas ApplicationContext is a sub interface of BeanFactory. It adds easier integration with Spring’s AOP features; message resource handling (for use in internationalization), event publication; and application-layer specific contexts such as the WebApplicationContext for use in web applications. In short, the BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality. "},
+
+{"category":"Spring",
+"question":"8.What is the difference between BeanFactory and ApplicationContext?",
+"answer":"Some of the differences between BeanFactory and ApplicationContext are: 1. ApplicationContext can publish events to beans that are registered as listeners while BeanFactory doesn't support this. 2.ApplicationContext can have more than one configuration file in the application while in BeanFactory there is only one configuration file possible. 3. ApplicationContext provides a means for resolving text messages, including support for i18n of those messages. 4. Certain operations on the container or beans in the container, which have to be handled programmatically with a bean factory, can be handled declaratively in an application context."},
+
+{"category":"Spring",
+"question":"9.What are the commonly used implementations of ApplicationContext?",
+"answer":"The commonly used implentations of ApplicationContext are- 1. ClassPathXmlApplicationContext- It loads bean definitions from XML files located in the classpath or loads configuration from multiple files under classpath. 2. FileSystemXmlApplicationContext- It loads bean definitions from XML files in the file system. 3. XmlWebApplicationContext- XmlWebApplicationContext is used to represent Spring Container for web applications.By defalut Spring creates object of XmlWebApplicationContext class to represent application context/spring container for web applications.It loads bean definitions from an XML file contained within a web application. By default it loads the configuration from file '/WEB-INF/applicationContext.xml'. XmlWebApplicationContext is an implementation of WebApplicationContext interface which in turn extends ApplicationContext interface."},
+
+{"category":"Spring",
+"question":"10.What is a bean?",
+"answer":"In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. A bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container."},
+
+{"category":"Spring",
+"question":"11.What is a bean lifecycle?",
+"answer":"A bean lfecycle is described by the time when the bean is initialized and uptil the time when the bean is being destroyed. The IoC container looks for the configuration metadata of the gven bean to be initialized. Using this information it creates the instance of the bean and injects the dependencies of the bean. If bean implements BeanNameAware interface, spring passes bean's id to setBeanName() method. If bean implements BeanFactoryAware interface spring passes beanfactory to setBeanFactory() method.If there are any postprocesses associated with the bean, Spring calls postProcesserBeforeInitialization() method. If bean implements InitializingBean, its afterPropertySet() method is called. But if bean has the declaration of init method then that method is called. If there are any BeanPostProcessors associated with the bean then postProcessAfterInitialization() method will be called. Now this bean is ready to be used by the application. If the bean implements DisposableBean, it will call the destroy() method."},
+
+{"category":"Spring",
+"question":"12.What is Spring MVC framework?",
+"answer":"MVC (Model View Controller) is a software design pattern for developing web applcations. So Spring uses this MVC architecture in which components are loosely coupled and develop flexible web applications.MVC architecture helps to separate out the input logic from business and UI logic. It is request driven designed around a central servlet that dispatches request to controllers. Spring's DispatcherServlet is completely integrated with Spring IoC container and allows us to use every other feature of Spring."},
+
+{"category":"Spring",
+"question":"13.What is a DispatcherServlet?",
+"answer":"In Spring MVC all incoming requests go through a single servlet. This servlet-DispatcherServlet is the front controller. Front controller is a typical design pattern in the web applications development. In this case, a single servlet receives all requests and transfers them to all other components of the application. The task of the DispatcherServlet is to send request to the specific Spring MVC controller. "},
+
+{"category":"Spring",
+"question":"14.What is a Controller in Spring?",
+"answer":"Controllers provide access to the application behavior that you typically define through a service interface. Controllers interpret user input and transform it into a model that is represented to the user by the view. Spring implements a controller in a very abstract way, which enables you to create a wide variety of controllers."},
+
+{"category":"Spring",
+"question":"15.What is @Controller annotation?",
+"answer":"The @Controller annotation indicates that a particular class serves the role of a controller. On specifying the annotation the class doesn't need to extend any controller base class or reference the Servlet API."},
+
+{"category":"Spring",
+"question":"16.What is @RequestMapping annotation?",
+"answer":"The @RequestMapping annotation is used to map a URL to either an entire class or a particular handler method. Typically the class-level annotation maps a specific request path (or path pattern) onto a form controller, with additional method-level annotations narrowing the primary mapping for a specific HTTP method request method ('GET', 'POST', etc.) or an HTTP request parameter condition."},
+
+{"category":"Spring",
+"question":"17.How is annotation wiring turned on in Spring?",
+"answer":"Annotation wiring is not turned on in the Spring container by default. In order to use annotation based wiring we must enable it in our Spring configuration file by configuring <context:annotation-config/> element."},
+
+{"category":"Spring",
+"question":"18.What is Spring JdbcTemplate?",
+"answer":"The JdbcTemplate class is the central class in the JDBC core package. It handles the creation and release of resources, which helps you avoid common errors such as forgetting to close the connection. It performs the basic tasks of the core JDBC workflow such as statement creation and execution, leaving application code to provide SQL and extract results. The JdbcTemplate class executes SQL queries, update statements and stored procedure calls, performs iteration over ResultSets and extraction of returned parameter values."},
+
+{"category":"Spring",
+"question":"19.What is bean auto wiring?",
+"answer":"The Spring container is able to autowire relationships between collaborating beans. This means that it is possible to automatically let Spring resolve collaborators (other beans) for a bean by inspecting the contents of the BeanFactory without using <constructor-arg> and <property> elements."},
+
+{"category":"Spring",
+"question":"20.What are the different modes of autowiring?",
+"answer":"The autowiring functionality has five modes which can be used to instruct Spring container to use autowiring for dependency injection-no- This is default setting. Explicit bean reference should be used for wiring. byName-When autowiring byName, the Spring container looks at the properties of the beans on which autowire attribute is set to byName in the XML configuration file. It then tries to match and wire its properties with the beans defined by the same names in the configuration file. byType-When autowiring by datatype, the Spring container looks at the properties of the beans on which autowire attribute is set to byType in the XML configuration file. It then tries to match and wire a property if its type matches with exactly one of the beans name in configuration file. If more than one such beans exist, a fatal exception is thrown. constructor-This mode is similar to byType, but type applies to constructor arguments. If there is not exactly one bean of the constructor argument type in the container, a fatal error is raised. autodetect-Spring first tries to wire using autowire by constructor, if it does not work, Spring tries to autowire by byType."},
+
+{"category":"Hibernate",
+"question":"1.What is Hibernate?",
+"answer":"Hibernate is a high performance, lightweight ORM(Object Relational Mapping) framework for Java language. It provides a framework for mapping a java application to a relational database."},
+
+{"category":"Hibernate",
+"question":"2.What is ORM?",
+"answer":"ORM , Object Relational Mapping is programming technique to map the object to the data stored in the database. It simplifies data creation, data manipulation and data access."},
+
+{"category":"Hibernate",
+"question":"3.What are the most common methods of Hibernate configuration?",
+"answer":"The most common methods of Hibernate configuration are- Programmic configuration and XML configuration in file hibernate.cfg.xml"},
+
+{"category":"Hibernate",
+"question":"4.What are the core interfaces of Hibernate framework?",
+"answer":"The five core interfaces are used in every Hibernate application. Using these interfaces, you can store and retrieve persistent objects and control transactions. These are Session interface, SessionFactory interface, Configuration interface, Transaction interface, Query and Criteria interfaces."},
+
+{"category":"Hibernate",
+"question":"5.What is HQL?",
+"answer":"HQL is Hibernate Query Language. Hibernate offers a query language that embodies a very powerful and flexible mechanism to query, store, update, and retrieve objects from a database. This language, the Hibernate query Language (HQL), is an object-oriented extension to SQL."},
+
+{"category":"Hibernate",
+"question":"6.How is mapping done from Java Objects with database tables?",
+"answer":"We write POJOs (beans with getter and setter) and then write hibernate configuration file hbm.xml where we map java class to database tables and columns to Java class variables."},
+
+{"category":"Hibernate",
+"question":"7.What is HibernateTemplate?",
+"answer":"org.springframework.orm.hibernate.HibernateTemplate is a helper class which provides different methods for querying/retrieving data from the database. It also converts checked HibernateExceptions into unchecked DataAccessExceptions.  HibernateTemplate is typically used to implement data access or business logic services. The central method is execute(), that supports the Hibernate code that implements HibernateCallback interface."},
+
+{"category":"Hibernate",
+"question":"8.What are the advantages of ORM over JDBC?",
+"answer":"An ORM has some advantages over plain JDBC. It makes business code access objects and not DB tables. It hide details of SQL queries from Object Oriented code. It is based on JDBC logic only. It saves from dealing with database implementation.It provides transaction management and automatic key generation. Entities are based on business concepts instead of database structure. It helps in fast development of application."},
+
+{"category":"Hibernate",
+"question":"9.What are the main components of Hibernate?",
+"answer":"The main components of Hibernate are Configuration- A configuration or properties file is provided by hibernate for mapping. SessionFactory- This configures Hibernate in the application using the provided configuration file and allows the Session object to be instantiated. Session- This is used to obtain the physical connection with the database. Transaction-It is the unit of work done in the database and RDBMS supports transaction functionality. Query- It uses SQL or HQL(Hibernate Query Language) to retrieve data and do other database operations. Criteria- This is used to create and execute object oriented criteria queries to retreive objects."},
+
+{"category":"Hibernate",
+"question":"10.What is Session?",
+"answer":"A Session is used to get a physical connection with a database. The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database. Persistent objects are saved and retrieved through a Session object.The session objects should not be kept open for a long time because they are not usually thread safe and they should be created and destroyed them as needed."},
+
+{"category":"Hibernate",
+"question":"11.What is Hibernate proxy?",
+"answer":"The proxy attribute enables lazy initialization of persistent instances of the class. Hibernate will initially return CGLIB proxies which implement the named interface. The actual persistent object will be loaded when a method of the proxy is invoked."},
+
+{"category":"Hibernate",
+"question":"12.What are Callback interfaces?",
+"answer":"Callback interfaces allow the application to receive a notification when something interesting happens to an object—for example, when an object is loaded, saved, or deleted. Hibernate applications don't need to implement these callbacks, but they're useful for implementing certain kinds of generic functionality."},
+
+{"category":"Hibernate",
+"question":"13.Is Hibernate Session thread safe?",
+"answer":"Hibernate Session object is not thread safe. Every thread would have its own session instance and close it after it's work is finished."},
+
+{"category":"Hibernate",
+"question":"14.What is difference between Hibernate Session get() and load() method?",
+"answer":"Hibernate session comes with different methods to load data from database. get and load are most used methods, at first look they seems similar but there are some differences between them. get() loads the data as soon as it’s called whereas load() returns a proxy object and loads data only when it’s actually required, so load() is better because it support lazy loading. Since load() throws exception when data is not found, we should use it only when we know data exists. We should use get() when we want to make sure data exists in the database."},
+
+{"category":"Hibernate",
+"question":"15.What is Hibernate caching?",
+"answer":"Hibernate caches query data to make application faster. The idea behind cache is to reduce the number of database queries, hence reducing the throughput time of the application. So it can give fast application performance. cache is enabled by default and there is no way to disable it. However hibernate provides methods through which we can delete selected objects from the cache or clear the cache completely. Any object cached in a session will not be visible to other sessions and when the session is closed, all the cached objects will also be lost."},
+{"category":"Hibernate",
+"question":"16.Explain Hibernate save(), saveOrUpdate() and persist() methods?",
+"answer":"Hibernate save can be used to save entity to database. It can be invoked without a transaction and if we have mapping entities, then only the primary object gets saved causing data inconsistencies. Also save returns the generated id immediately. Hibernate persist is similar to save with transaction infact better than save because we can’t use it outside the boundary of transaction, so all the object mappings are preserved. Also persist doesn’t return the generated id immediately, so data persistence happens when needed. Hibernate saveOrUpdate results into insert or update queries based on the provided data. If the data is present in the database, update query is executed. We can use saveOrUpdate() without transaction also, but there will be issues with mapped objects not getting saved if session is not flushed. "},
+
+{"category":"Hibernate",
+"question":"17.What are the states of object in Hibernate?",
+"answer":"There are 3 states of object (instance) in hibernate.Transient: The object is in transient state if it is just created but has no primary key (identifier) and not associated with session. Persistent: The object is in persistent state if session is open, and you just saved the instance in the database or retrieved the instance from the database. Detached: The object is in detached state if session is closed. After detached state, object comes to persistent state if you call lock() or update() method."},
+
+{"category":"Hibernate",
+"question":"18.How many types of association mapping are possible in hibernate?",
+"answer":"There can be 4 types of association mapping in hibernate.One to One, One to Many, Many to One and Many to Many."},
+
+{"category":"Hibernate",
+"question":"19.What are persistent classes in hibernate?",
+"answer":"Java classes whose objects or instances will be stored in database tables are called persistent classes in Hibernate."},
+
+{"category":"Hibernate",
+"question":"20.What is lazy loading?",
+"answer":"Lazy loading is a technique in which objects are loaded on demand basis. Since Hibernate 3, lazy loading is by default, enabled so that child objects are not loaded when parent is loaded."},
+
+{"category":"HTML",
+"question":"1.What are HTML tags?",
+"answer":"HTML tags are the keywords(tag names) surrounded by angle brackets. Tags normally come in pairs, the start tag and the end tag. End tag is simlar to start tag but with a forward slash before the tag name."},
+
+{"category":"HTML",
+"question":"2.Do all HTML tags come in pairs?",
+"answer":"Not all HTML tags come in pairs. Tags like <img> or <br> doesn't come in pair."},
+
+{"category":"HTML",
+"question":"3.What is the difference between HTML elements and tags?",
+"answer":"HTML elements communicate to the browser to render text. It usually consists of a start tag and end tag with content inserted in between. The HTML element is everything from the start tag to the end tag."},
+
+{"category":"HTML",
+"question":"4.What are the advantages of collapsing white space?",
+"answer":"White spaces are the blank sequence of space characters which is treated as a single space character in html. Since the browser would collapse the multiple spaces into a single space so we can write the html code in readable form with multiple spaces to arrange the code with indented lines. "},
+
+{"category":"HTML",
+"question":"5.Does hyperlink apply only to text?",
+"answer":"No. Hyperlinks applies to images also. So by using <a href> tag images also can be made as clickable links which can navigate the user to the other linked page."},
+
+{"category":"HTML",
+"question":"6.What is an image map?",
+"answer":"An image map is an image with clickable areas.The required name attribute of the <map> element is associated with the <img>'s usemap attribute and creates a relationship between the image and the map. The <map> element contains a number of <area> elements, that defines the clickable areas in the image map."},
+
+{"category":"HTML",
+"question":"7.Why an alternative text is used in image mapping?",
+"answer":"While using image mapping it would become complicated and difficult to determine which part of image corresponds to which link. So by using alternative text it would add descriptive text to the part of the image according to the link it provides."},
+
+{"category":"HTML",
+"question":"8.What are style sheets?",
+"answer":"Style sheets enable us to make well defined, transportable and consistent style templates. These style templates can be linked to multiple we pages, which makes it easy to change the style of all web pages linked by making changes only in one style sheet."},
+
+{"category":"HTML",
+"question":"9.What is DOCTYPE?",
+"answer":"DOCTYPE is Document Type Declarations. It is used to inform web browsers that which type of documents like XML documents it is going to receive. It is declared as <!DOCTYPE> as the first line, even above <html> tag."},
+
+{"category":"HTML",
+"question":"10.What are HTML attributes?",
+"answer":"All HTML elements can have attributes which provide additional information about an element. They are always specified in the start tag and these come in name value pairs. Example <img src='flower.jpg' width='100' height='142'>"},
+
+{"category":"HTML",
+"question":"11.What is the difference between a div and span?",
+"answer":"Div is a block element and span is an inline element and its width depends upon the content of itself whereas div's width does not. Div element is block line(which is basically equivalent to having a line break before and after it) and used to group larger chunks of code whereas span is used for a small chunk of HTML inside a line (such as inside a paragraph)."},
+
+{"category":"HTML",
+"question":"12.What is a marquee tag?",
+"answer":"The HTML <marquee> tag is used for scrolling piece of text or image displayed either horizontally across or vertically down your website page depending on the settings. Example <marquee direction='up'>Direction of scrolling text will be from bottom to top.</marquee>"},
+
+{"category":"HTML",
+"question":"13.When do we use frame tags?",
+"answer":"Frames make navigating a site much easier. The <frame> tag defines one particular window(frame) within a <frameset>. If the main links to the site are located in a frame that appears at the top or along the edge of the browser, the content for those links can be displayed in the remainder of the browser window."},
+
+{"category":"HTML",
+"question":"14.What is the difference between width='100px' and width='100%'?",
+"answer":"For 100px the width will be always fixed at 100px whatever is the resolution of the screen. Whereas for width 100% it will occupy all the available space on the screen but also adjust according to the resolution of the screen settings."},
+
+{"category":"HTML",
+"question":"15.What is the difference between cell spacing and cell padding?",
+"answer":"Cell spacing controls the space between table cells by defining the pixel width between them whereas the cell padding controls the amount of space between the contents of the cell from the cell wall."},
+
+{"category":"HTML",
+"question":"16.What are meta tags and why they are used?",
+"answer":"Metadata is the information about data. The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable. Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.The <meta> tag always goes inside the head element. The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services."},
+
+{"category":"HTML",
+"question":"17.How do we insert a JavaScript in HTML page?",
+"answer":"We use script tag to indicate javascript in HTML. Place this inside <head> tag. Put the type property value as javascript, so it is type='text/javascript'"},
+
+{"category":"HTML",
+"question":"18.What is the difference between HTML and HTML5?",
+"answer":"Document of HTML is very large as compare to the HTML5. 2. Audio and Video tags are not present in HTML whereas HTML5 contains audio and video tags. 3. Vector technology is not integral part of HTML whereas HTML5 Vector technology is the integral part of it. 4. HTML supported by all old browsers whereas HTML5 is supported by new browser. 5. In HTML web sockets are not available whereas in HTML5 Full duplex communication channel is present."},
+
+{"category":"HTML",
+"question":"19.Why do we use span tag in general?",
+"answer":"Span tag is used generally for highlighting the color of the text, make the text colored or for adding background image to the text."},
+
+{"category":"HTML",
+"question":"20.How many parts are there in HTML documents?",
+"answer":"An HTML 4 document is composed of three parts: A line containing HTML version information, a declarative header section (delimited by the HEAD element), and a body, which contains the document's actual content. The body may be implemented by the BODY element or the FRAMESET element. White space (spaces, newlines, tabs, and comments) may appear before or after each section."}
+]

@@ -1,0 +1,94 @@
+[{"term":"API",
+"meaning":"Application program interface (API) is a set of routines, protocols, and tools for building software applications. An API specifies how software components should interact and APIs are used when programming graphical user interface (GUI) components. A good API makes it easier to develop a program by providing all the building blocks. A programmer then puts the blocks together. Like-Google Maps API, YouTube APIs etc."},
+
+{"term":"Cookie",
+"meaning":"A message given to a Web browser by a Web server. The browser stores the message in a text file. The message is then sent back to the server each time the browser requests a page from the server. The main purpose of cookies is to identify users and possibly prepare customized Web pages for them. When you enter a Web siteusing cookies, you may be asked to fill out a form providing such information as your name and interests. This information is packaged into a cookie and sent to your Web browser which stores it for later use. The next time you go to the same Web site, your browser will send the cookie to the Web server. The server can use this information to present you with custom Web pages. Like, instead of seeing just a generic welcome page you might see a welcome page with your name on it."},
+
+{"term":"Caching",
+"meaning":"Caching is the process of storing data in a cache. A cache is a temporary storage area. For example, the files you automatically request by looking at a Web page are stored on your hard disk in a cache subdirectory under the directory for your browser. When you return to a page you've recently looked at, the browser can get those files from the cache rather than the original server, saving you time and saving the network the burden of additional traffic."},
+
+{"term":"OOP",
+"meaning":"OOP-Object-oriented programming (OOP) is a programming language model organized around objects rather than actions and data rather than logic. Earlier, a program was viewed as a logical procedure that takes input data, processes it, and produces output data. Object-oriented programming takes the view that what we really care about are the objects we want to manipulate rather than the logic required to manipulate them."},
+
+{"term":"Agile",
+"meaning":"The chronic problems with the waterfall abstraction gave birth to a number of agile project management methods (Agile, Scrum, XP Programming etc) that despite many differences at the more detailed level use the same fundamental principles to tackle product development complexity:The project is organised as a number of small iterations through the classic project stages (definition, planning, organisation, execution and closure). Each iteration aims at a relatively small yet semantically complete increment in product functionality or non-functional characteristics. Strong end-user involvement throughout the project. Since every iteration goes through a separate definition and planning stage the time horizon for various estimation and planning activities is greatly reduced. It helps achieve greater accuracy, hence make it easier to access feasibility, measure value and costs etc. Small increments help controlling the scope, evaluate utility of the changes and keep users involved since there is always a fresh version of fully functioning product. It is also much easier to organise a number of teams working on a large project simultaneously when increments are kept small, this really helps tackling task dependencies. The user feedback is key to iterative methods, since it helps the product evolve gradually in a right direction providing greater utility at the end."},
+
+{"term":"Scrum",
+"meaning":"Scrum is just one of the many iterative and incremental agile software development method. In the SCRUM methodology a sprint is the basic unit of development. Each sprint starts with a planning meeting, where the tasks for the sprint are identified and an estimated commitment for the sprint goal is made. A Sprint ends with a review or retrospective meeting where the progress is reviewed and lessons for the next sprint are identified. During each sprint, the team creates finished portions of a product."},
+
+{"term":"Waterfall model",
+"meaning":"The early approach to software project management usually referred to as “waterfall model” implies a sequence of clearly defined steps necessary to complete any project: define, plan, organise, execute and then close. This represents a very neat, simple and above all convenient abstraction from the project management theorist point of view. When one stage follows another it is possible to define clear inputs and outputs for each stage, isolate and identify techniques and tools that are most useful at every phase. This is a clear example of reductionism in tackling project management complexity: keep splitting the whole into smaller bits until you get to understand each bit in isolation and then hopefully you will master the mechanics of their totality. But it turned out that real-life process can not be clearly cut into stages, often definition is still changed on what it seems to be planning, organisation or even execution stage."},
+
+{"term":"SOA",
+"meaning":"A service-oriented architecture (SOA) is an architectural pattern in computer software design in which application components provide services to other components via a communications protocol, typically over a network. The principles of service-orientation are independent of any vendor, product or technology. Services can be combined to provide the functionality of a large software application.[3] SOA makes it easier for software components on computers connected over a network to cooperate. Every computer can run any number of services, and each service is built in a way that ensures that the service can exchange information with any other service in the network without human interaction and without the need to make changes to the underlying program itself."},
+
+{"term":"PAAS",
+"meaning":"Platform as a service (PaaS) is a cloud computing model that delivers applications over the Internet. In a PaaS model, a cloud provider delivers hardware and software tools -- usually those needed for application development -- to its users as a service. A PaaS provider hosts the hardware and software on its own infrastructure. As a result, PaaS frees users from having to install in-house hardware and software to develop or run a new application.  "},
+
+{"term":"SAAS",
+"meaning":"Software as a service (SaaS) is a software distribution model in which a third-party provider hosts applications and makes them available to customers over the Internet. SaaS is one of three main categories of cloud computing, alongside infrastructure as a service (IaaS) and platform as a service (PaaS). SaaS removes the need for organizations to install and run applications on their own computers or in their own data centers. Some of the benefits of SAAS are - flexible payments, scalable usage, easily accessible on internet and automatic updates."},
+
+{"term":"AOP",
+"meaning":"In computing, aspect-oriented programming (AOP) is a programming model that aims to increase modularity by allowing the separation of cross-cutting concerns. AOP is all about managing the common functionality (which span across the application, hence cross cutting) within the application such that it is not embedded within the business logic. Examples to such cross cutting concerns are logging, managing security, transaction management etc. Frameworks allows this to managed automatically with the help of some configuration files."},
+
+{"term":"Bug",
+"meaning":"A software bug is an error, flaw, failure or fault in a computer program or system that causes it to produce an incorrect or unexpected result, or to behave in unintended ways. Most bugs arise from mistakes and errors made by people in either a program's source code or its design, or in frameworks and operating systems used by such programs, and a few are caused by compilers producing incorrect code."},
+
+{"term":"Build",
+"meaning":"Build refers to the process by which source code is converted into a stand-alone form that can be run on a computer or to the form itself. One of the most important steps of a software build is the compilation process, where source code files are converted into executable code. The process of building software is usually managed by a build tool. Builds are created when a certain point in development has been reached or the code has been deemed ready for implementation, either for testing or outright release. A build is also known as a software build or code build."},
+
+{"term":"Build Tool",
+"meaning":"Build tools are programs that automate the creation of executable applications from source code. Building incorporates compiling, linking and packaging the code into a usable or executable form. In small projects, developers will often manually invoke the build process. This is not practical for larger projects, where it is very hard to keep track of what needs to be built, in what sequence and what dependencies there are in the building process. Using an automation tool allows the build process to be more consistent. For example -ANT, Maven."},
+
+{"term":"Debugging",
+"meaning":"Debugging is the process of finding and resolving of defects that prevent correct operation of computer software or a system. Debugging tends to be harder when various subsystems are tightly coupled, as changes in one may cause bugs to emerge in another."},
+
+{"term":"Design Pattern",
+"meaning":"In software engineering, a software design pattern is a general reusable solution to a commonly occurring problem within a given context in software design. It is not a finished design that can be transformed directly into source or machine code. It is a description or template for how to solve a problem that can be used in many different situations. Design patterns are formalized best practices that the programmer can use to solve common problems when designing an application or system."},
+
+{"term":"SDK",
+"meaning":"A software development kit (SDK or devkit) is typically a set of software development tools that allows the creation of applications for a certain software package, software framework, hardware platform, computer system, video game console, operating system, or similar development platform."},
+
+{"term":"Outsourcing",
+"meaning":"Outsourcing is a practice used by different companies to reduce costs by transferring portions of work to outside suppliers rather than completing it internally. It is an effective cost-saving strategy when used properly."},
+
+{"term":"Patch",
+"meaning":"A patch is a quick-repair job for a piece of programming. During a software product's beta test distribution or try-out period and later after the product is formally released, bugs will be found. A patch is the immediate solution that is provided to users; it can sometimes be downloaded from the software maker's Web site. The patch is not necessarily the best solution for the problem and the product developers often find a better solution to provide when they package the product for its next release."},
+
+{"term":"Polymorphism",
+"meaning":"It is the ability of an object to take on many different forms.Example when a parent class reference is used to refer to a child class object. The Java object that can pass more than one IS-A test would be polymorphic. So all Java objects are polymorphic as they are of ther own type and of class Object type."},
+
+{"term":"Portability",
+"meaning":"It is the ability of a software to run (with little or no modification) on different hardware and/or software platforms, or work with different versions of the same hardware or program. In general, software written in Java has this ability."},
+
+{"term":"Prototype",
+"meaning":"A prototype is an early sample, model, or release of a product built to test a concept or process or to act as a thing to be replicated or learned from. It is a term used in a variety of contexts, including semantics, design, electronics, and software programming. A prototype is designed to test and try a new design to enhance precision by system analysts and users. Prototyping serves to provide specifications for a real, working system rather than a theoretical one. In some workflow models, creating a prototype (a process sometimes called materialization) is the step between the formalization and the evaluation of an idea."},
+
+{"term":"Pseudocode",
+"meaning":"Pseudocode is an informal high-level description of the operating principle of a computer program or other algorithm. It uses the structural conventions of a normal programming language, but is intended for human reading rather than machine reading. Pseudocode typically omits details that are essential for machine understanding of the algorithm, such as variable declarations, system-specific code and some subroutines. The purpose of using pseudocode is that it is easier for people to understand than conventional programming language code, and that it is an efficient and environment-independent description of the key principles of an algorithm. It is commonly used in textbooks and scientific publications that are documenting various algorithms, and also in planning of computer program development, for sketching out the structure of the program before the actual coding takes place."},
+
+{"term":"Refactoring",
+"meaning":"Code refactoring is the process of restructuring existing computer code—changing the factoring—without changing its external behavior. Refactoring improves nonfunctional attributes of the software. Advantages include improved code readability and reduced complexity; these can improve source-code maintainability and create a more expressive internal architecture or object model to improve extensibility. "},
+
+{"term":"Regression Testing",
+"meaning":"The purpose of regression testing is to ensure that any changes later in the software have not introduced new faults. One of the main reasons for regression testing is to determine whether a change in one part of the software affects other parts of the software. Common methods of regression testing include rerunning previously completed tests and checking whether program behavior has changed and whether previously fixed faults have re-emerged. Regression testing can be used not only for testing the correctness of a program, but often also for tracking the quality of its output. Regression tests can be functional tests or unit tests."},
+
+{"term":"Smoke Testing",
+"meaning":"Smoke Testing, also known as 'Build Verification Testing', is a type of software testing that comprises of a non-exhaustive set of tests that aim at ensuring that the most important functions work. The results of this testing is used to decide if a build is stable enough to proceed with further testing."},
+
+{"term":"Structured Programming",
+"meaning":"Structured programming is a programming paradigm aimed at improving the clarity, quality, and development time of a computer program by making extensive use of subroutines, block structures, for and while loops—in contrast to using simple tests and jumps such as the goto statement which is difficult both to follow and to maintain."},
+
+{"term":"SDLC",
+"meaning":"The software development life cycle (SDLC) is a framework defining tasks performed at each step in the software development process. SDLC is a structure followed by a development team within the software organization. It consists of a detailed plan describing how to develop, maintain and replace specific software."},
+
+{"term":"GUI",
+"meaning":"In computer science, a graphical user interface (GUI), is a type of user interface that allows users to interact with electronic devices through graphical icons and visual indicators such as secondary notation, instead of text-based user interfaces, typed command labels or text navigation."},
+
+{"term":"Web Services",
+"meaning":"A web service is any piece of software that makes itself available over the internet and uses a standardized XML messaging system. XML is used to encode all communications to a web service. For example, a client invokes a web service by sending an XML message, then waits for a corresponding XML response."},
+
+{"term":"Continuous Integration",
+"meaning":"Continuous Integration (CI) is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early."}
+
+]
