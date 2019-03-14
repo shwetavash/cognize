@@ -1,0 +1,526 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>COGNIZE</title>
+		<!-- to use phonegap javascript functions -->
+	    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	
+		<!-- use for mobile app -->
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />		
+		<link rel="stylesheet" href="css/itTool.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.3.min.css" />
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.mobile-1.4.3.min.js"></script>
+		<script src="js/underscore.js"></script>
+
+		<!-- use for computer testing -->
+		<!--<link rel="stylesheet" href="/knowUrITTool/themes/jquery.mobile.icons.min.css" />		
+		<link rel="stylesheet" href="/knowUrITTool/css/itTool.css" />
+		<link rel="stylesheet" href="/knowUrITTool/css/jquery.mobile.structure-1.4.3.min.css" />
+		<script src="/knowUrITTool/js/jquery-1.11.3.min.js"></script>
+		<script src="/knowUrITTool/js/jquery.mobile-1.4.3.min.js"></script>
+		<script src="/knowUrITTool/js/underscore.js"></script>  -->
+
+		<script type="text/javascript">	 
+		
+		//sliding panel
+		var panel = '<div data-role="panel" id="toolsPanel" data-theme="a" data-position="right" class="ui-body-inherit">' +
+		'<a href="#alphaSortToolsPage" data-role="button" data-iconpos="notext" class="ui-link ui-btn ui-shadow ui-corner-all">Tools in alphabetical Order</a>' +
+			
+			'<a href="http://play.google.com/store/apps/details?id=com.software.tools" data-role="button" data-iconpos="notext" class="ui-link ui-btn ui-shadow ui-corner-all">Rate this app</a>' + 			 
+			'<select name="select-choice-share" id="select-choice-share" onchange="handleSocialShare()">	' +				            
+			'<option value="">Share the app</option>' +
+			'<option value="whatsapp">Share by whatsapp</option>' +
+            '<option value="sms">Share by SMS</option>' +
+            '<option value="email">Share by email</option>' +
+			'</select>' + 			
+			'</div>'; 
+			
+			$(function() {
+				  setTimeout(hideSplash, 2000);
+			});
+
+			function hideSplash() {
+				  $.mobile.changePage("#homePage", "fade");
+			}
+				
+			$(document).one('pagebeforecreate', function () {
+				  $.mobile.pageContainer.prepend(panel);
+				  $("#toolsPanel").panel().enhanceWithin();
+				});   
+						
+				function shareEmail(subject, body){
+				    window.location = "mailto:select your contact?subject=App to know about IT tools-Cognize !!&body=" + body;
+				}
+				
+				function shareByWhatsapp(subject, body){
+					 window.location.href = "whatsapp://send?text=" + body;
+				}
+				
+				function shareBySMS(subject, body){		    
+				    window.location ="sms:11111111?body=" + encodeURIComponent(body);
+				}
+				function handleSocialShare()
+				{
+				    $('#select-choice-share option:selected').each(function()
+				    {
+				        text = "Cognize Yourself about the current IT tools. Download " +
+				        		"app Cognize using this link-http://play.google.com/store/apps/details?id=com.software.tools";
+				        url ="http://play.google.com/store/apps/details?id=com.software.tools";
+
+				        shareService = $(this).val()
+				        switch (shareService) {
+				            case "sms":
+				                shareBySMS(url, text);
+				                break;
+				            case "whatsapp":
+				                shareByWhatsapp(url, text);
+				                break;
+				            case "email":
+				                shareEmail(url, text);
+				                break;
+				            default:
+
+				        }
+				    });
+				}
+				
+				
+			// Admob set up (taken from phonegap cordova plugin)
+			function initAd(){
+				if ( window.plugins && window.plugins.AdMob ) {
+					var ad_units = {
+						android : {
+							banner: 'ca-app-pub-3413143979549570/8955956840'
+						}
+					};
+					var admobid = ( /(android)/i.test(navigator.userAgent) ) ? ad_units.android : ad_units.ios;
+					
+					window.plugins.AdMob.setOptions( {
+						publisherId: admobid.banner,
+						bannerAtTop: false, // set to true, to put banner at top
+						overlap: false, // set to true, to allow banner overlap webview
+						offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+						isTesting: false, // receiving test ad
+						autoShow: true // auto show interstitial ad when loaded
+					});
+				} //else {}
+			}
+			
+			function registerAdEvents() {
+				document.addEventListener('onReceiveAd', function(){});
+				document.addEventListener('onFailedToReceiveAd', function(data){});
+				document.addEventListener('onPresentAd', function(){});
+				document.addEventListener('onDismissAd', function(){ });
+				document.addEventListener('onLeaveToAd', function(){ });
+				document.addEventListener('onReceiveInterstitialAd', function(){ });
+				document.addEventListener('onPresentInterstitialAd', function(){ });
+				document.addEventListener('onDismissInterstitialAd', function(){ });
+			}
+			
+			function showAdsFunc(){
+				if ( window.plugins && window.plugins.AdMob )
+					window.plugins.AdMob.createBannerView();
+			}
+			
+						
+			//loading homepage
+			$(document).on('click', '#toolsHomeLi', function(){
+				$(':mobile-pagecontainer').pagecontainer('change', '#toolsHomePage', {
+	                transition: 'fade',
+	                changeHash: true,
+	                reverse: true,
+	                showLoadMsg: true
+				});
+			});
+
+			
+			$(document).on('click', '#sharedArticlesLi', function(){
+			    
+				$(':mobile-pagecontainer').pagecontainer('change', '#articlesHomePage', {
+	                transition: 'fade',
+	                changeHash: true,
+	                reverse: true,
+	                showLoadMsg: true
+				});
+			});
+			//to open external links in inappbrowser for shared articles			
+			$(document).on('click','.articlesListElement',function(e) {
+			    if ($(this).attr('target') === '_blank') {
+			        window.open($(this).attr('href'),'_system','location=no');
+			        e.preventDefault();
+			    }
+			});
+			
+			$(document).on('click', '#interviewQuesHomeLi', function(){
+				$(':mobile-pagecontainer').pagecontainer('change', '#interviewQuesHomePage', {
+	                transition: 'fade',
+	                changeHash: true,
+	                reverse: true,
+	                showLoadMsg: true
+				});
+			});
+			
+			$(document).on('click', '#technicalTermsLi', function(){
+				$(':mobile-pagecontainer').pagecontainer('change', '#technicalTermsPage', {
+	                transition: 'fade',
+	                changeHash: true,
+	                reverse: true,
+	                showLoadMsg: true
+				});
+			});
+			/*this function on init of home page reads tools.json file and first finds
+			  the distinct categories from json and adds and displays it in list form 
+			  on toolsHomePage
+			*/
+			//function onBodyLoad(){
+			$(document).on('pageinit', '#toolsHomePage', function(){
+				
+				initAd();
+				showAdsFunc();
+				
+				$.getJSON("tools.json", function(data){
+				    //using underscore.js it finds the distinct categories and stores them in category var
+				    var distinctCategories = _.keys(_.countBy(data, function(data) { return data.category; }));
+				    
+				    //in category array each key is added in a list
+				    _.each(distinctCategories, function(c, index, distinctCategories) {
+				    	 $("#toolsCategory-ulist").append("<li class='categoryListElement' data-name='" + 
+				    			  c + "'><a href='' class='ui-btn ui-btn-icon-right ui-icon-carat-r'> " 
+				    			  + c + "</a></li>" );
+				    			  
+				    });
+				}); 				
+			});
+			
+			/* in this function when a category of tools is clicked it finds its subcategories and 
+			takes to subcategories page and lists them in collapsible list
+			*/
+			$(document).on('click', '.categoryListElement', function(){				
+				$("#subcategoryToolsDiv").empty();
+				var selectedCategory = $(this).attr('data-name');
+				//alert(selectedCategory);
+				$(':mobile-pagecontainer').pagecontainer('change', '#toolsSubcategoryPage', {
+	                transition: 'fade',
+	                changeHash: true,
+	                reverse: true,
+	                showLoadMsg: true
+				});
+				$.getJSON("tools.json", function(data){ 
+					$.each(data, function(idx, element){
+						if(element.category == selectedCategory){							
+							$("#subcategoryToolsDiv").append("<div class='collapsible'>" +
+	    							"<h3>" + element.subcategory + "</h3>" +
+	    							"<p><i><font size='4' color='blue'>Description : </font><br/>" + element.definition + "</i></p>" +
+	    							"<p><i><font size='4' color='blue'>Latest Version : </font>" + element.latestversion + "</i></p>" +
+	    							"<p><i><font size='4' color='blue'>Year Released : </font>" + element.yearReleased + "</i></p>" +
+	    							"<p><i><font size='4' color='blue'>Owned By : </font>" + element.ownedBy+ "</i></p>" +
+	    							"<p><i><font size='4' color='blue'>Key Features : </font><br/>" + element.keyFeatures + "</i></p>" +
+	    							"</div>");
+							$('.collapsible').collapsible();
+	    				}						
+				    });
+				});
+				
+			});
+			/* this function on alphaSortToolsPage lists all the tools in alphabetically order
+			*/
+			
+			$(document).on('pageinit', '#alphaSortToolsPage', function(){
+				$.getJSON("tools.json", function(data){ 
+					var sortedTools = _.sortBy(data,'subcategory');
+					$.each(sortedTools, function(idx, element){
+						//alert(element.subcategory);
+						$("#alphaSortedToolsDiv").append("<div class='collapsible'>" +
+								"<h3>" + element.subcategory + "</h3>" +
+    							"<p><i><font size='4' color='blue'>Description : </font><br/>" + element.definition + "</i></p>" +
+    							"<p><i><font size='4' color='blue'>Latest Version : </font>" + element.latestversion + "</i></p>" +
+    							"<p><i><font size='4' color='blue'>Year Released : </font>" + element.yearReleased + "</i></p>" +
+    							"<p><i><font size='4' color='blue'>Owned By : </font>" + element.ownedBy+ "</i></p>" +
+    							"<p><i><font size='4' color='blue'>Key Features : </font><br/>" + element.keyFeatures + "</i></p>" +
+    							"</div>");
+						$('.collapsible').collapsible();
+					});
+				});
+			});
+			
+		/* interview questions page
+		*/
+		/*this function on init of interview ques home page reads interviewQues.json file and first finds
+			  the distinct categories from json and adds and displays it in list form 
+			  on interviewQuesHomePage
+		*/
+		$(document).on('pageinit', '#interviewQuesHomePage', function(){
+						
+			$.getJSON("interviewQues.json", function(data){
+			    //using underscore.js it finds the distinct categories and stores them in category var
+			    var distinctCategories = _.keys(_.countBy(data, function(data) { return data.category; }));
+			    
+			    //in category array each key is added in a list
+			    _.each(distinctCategories, function(c, index, distinctCategories) {
+			    	 $("#homeInterviewQues-ulist").append("<li class='categoryInterviewQuesListElement' data-name='" + 
+			    			  c + "'><a href='' class='ui-btn ui-btn-icon-right ui-icon-carat-r'> " 
+			    			  + c + "</a></li>" );
+			    			  
+			    });
+			}); 				
+		});
+		
+		/* in this function when a category of interview ques is clicked it finds its questions and 
+		answers and takes to interviewQuesPage page and lists them in collapsible list
+		*/
+		$(document).on('click', '.categoryInterviewQuesListElement', function(){				
+			$("#interviewQuesDiv").empty();
+			var selectedCategory = $(this).attr('data-name');
+			//alert(selectedCategory);
+			$(':mobile-pagecontainer').pagecontainer('change', '#interviewQuesPage', {
+                transition: 'fade',
+                changeHash: true,
+                reverse: true,
+                showLoadMsg: true
+			});
+			$.getJSON("interviewQues.json", function(data){ 
+				$.each(data, function(idx, element){
+					if(element.category == selectedCategory){
+					
+						$("#interviewQuesDiv").append("<div class='collapsible'>" +
+    							"<h3><i><font white-space:'normal' size='4' color='blue'><br/>" + element.question + "</font></i></h3>" +
+    							"<p><i><font size='4'>Answer-</font>" + element.answer + "</i></p>" +
+    							"</div>");
+						$('.collapsible').collapsible();
+    				}						
+			    });
+			});
+			
+		});
+		
+		// technical terms page
+		$(document).on('pageinit', '#technicalTermsPage', function(){
+			$.getJSON("glossary.json", function(data){ 
+					
+				var sortedTerms = _.sortBy(data,'term');
+				$.each(sortedTerms, function(idx, element){
+					$("#technicalTermsDiv").append("<div class='collapsible'>" +
+   							"<h3><i><font white-space:'normal' size='4' color='blue'><br/>" + element.term + "</font></i></h3>" +
+   							"<p><i><font size='4'>Meaning-</font>" + element.meaning + "</i></p>" +
+   							"</div>");
+					$('.collapsible').collapsible();    										
+			    });
+			});
+		});
+		
+		</script>
+	
+	</head>
+	<body>
+		<!-- home page -->	
+		<div data-role="page" id="homePage">		
+			<div data-theme="a" data-role="header" data-position="inline">
+				<div class="ui-grid-c">		    	            		            	
+					<div class="ui-block-b"style="width: 90%">
+						<h1 class="ui-title" data-role="heading" style="text-align : center">Category</h1>
+					</div>
+					<div class="ui-block-c" style="width: 10%">
+						<a href="#toolsPanel" data-role="button" 
+							data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+					</div>				           		            
+				</div> 
+			</div>			
+			<div data-role="content">				
+				<ul data-role="listview" class="ui-listview" id="homeCategory-ulist">
+					<li id='interviewQuesHomeLi'><a href='' class='ui-btn ui-btn-icon-right ui-icon-carat-r'>Interview Questions</a></li>
+					<li id='toolsHomeLi'><a href='' class='ui-btn ui-btn-icon-right ui-icon-carat-r'>Tools and technologies</a></li>
+					<li id='technicalTermsLi'><a href='' class='ui-btn ui-btn-icon-right ui-icon-carat-r'>Technical Terms</a></li>
+					<li id='sharedArticlesLi'><a href='' class='ui-btn ui-btn-icon-right ui-icon-carat-r'>Shared articles</a></li>
+				</ul>         	
+			</div>			
+		</div>
+		<!-- end of home page -->	
+		
+		<!--tools home page -->		
+		<div data-role="page" id="toolsHomePage">		
+			<div data-theme="a" data-role="header" data-position="inline">
+				<div class="ui-grid-c">
+					<div class="ui-block-a" style="width: 10%">
+		                <a href="#homePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div> 					    	            		            	
+					<div class="ui-block-b"style="width: 80%">
+						<h1 class="ui-title" data-role="heading" style="text-align : center">Tools category</h1>
+					</div>
+					<div class="ui-block-c" style="width: 10%">
+						<a href="#toolsPanel" data-role="button" 
+							data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+					</div>				           		            
+				</div> 
+			</div>			
+			<div data-role="content">				
+				<ul data-role="listview" class="ui-listview" id="toolsCategory-ulist">
+				</ul>           	
+			</div>			
+		</div>
+		<!-- end of tools home page -->
+		
+		<!-- technologies page -->
+		<div data-role="page" id="toolsSubcategoryPage">			
+			<div data-theme="a" data-role="header" data-position="inline">
+			    <div class="ui-grid-c">			    	           
+			    	<div class="ui-block-a" style="width: 10%">
+		                <a href="#toolsHomePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div>              		            	
+		            <div class="ui-block-b"style="width: 80%">
+		            	<h1 class="ui-title" data-role="heading" style="text-align : center">Technologies</h1>
+		            </div>
+		            <div class="ui-block-c" style="width: 10%">
+		            	<a href="#toolsPanel" data-role="button" 
+		            		data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+		            </div>		            		            
+        		</div> 
+			</div>			
+			<div data-role="content">
+				<div id="subcategoryToolsDiv"></div>            	
+			</div>			
+		</div>
+		<!-- end of technologies page -->
+		
+		<!-- alphabetically ordered technologies page -->
+		<div data-role="page" id="alphaSortToolsPage">			
+			<div data-theme="a" data-role="header" data-position="inline">
+			    <div class="ui-grid-c">			    	     
+			    	<div class="ui-block-a" style="width: 10%">
+		                <a href="#toolsHomePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div>            		            	
+		            <div class="ui-block-b"style="width: 80%">
+		            	<h1 class="ui-title" data-role="heading" style="text-align : center">Technologies</h1>
+		            </div>
+		            <div class="ui-block-c" style="width: 10%">
+		            	<a href="#toolsPanel" data-role="button" 
+		            		data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+		            </div>		            		            
+        		</div> 
+			</div>			
+			<div data-role="content">
+				<div id="alphaSortedToolsDiv" data-filter='true'></div>            	
+			</div>
+			
+		</div>
+		<!-- end of alphabetically ordered technologies page -->
+		
+		<!-- interview questions home(category) page -->	
+		<div data-role="page" id="interviewQuesHomePage">		
+			<div data-theme="a" data-role="header" data-position="inline">
+				<div class="ui-grid-c">		
+					<div class="ui-block-a" style="width: 10%">
+		                <a href="#homePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div>     	            		            	
+					<div class="ui-block-b"style="width: 80%">
+						<h1 class="ui-title" data-role="heading" style="text-align : center">Technology</h1>
+					</div>
+					<div class="ui-block-c" style="width: 10%">
+						<a href="#toolsPanel" data-role="button" 
+							data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+					</div>				           		            
+				</div> 
+			</div>			
+			<div data-role="content">				
+				<ul data-role="listview" class="ui-listview" id="homeInterviewQues-ulist">
+				</ul>           	
+			</div>			
+		</div>
+		<!-- end of interview questions home(category) page -->
+		
+		<!-- interview questions page -->
+		<div data-role="page" id="interviewQuesPage">			
+			<div data-theme="a" data-role="header" data-position="inline">
+			    <div class="ui-grid-c">			    	           
+			    	<div class="ui-block-a" style="width: 10%">
+		                <a href="#interviewQuesHomePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div>              		            	
+		            <div class="ui-block-b"style="width: 80%">
+		            	<h1 class="ui-title" data-role="heading" style="text-align : center">Questions</h1>
+		            </div>
+		            <div class="ui-block-c" style="width: 10%">
+		            	<a href="#toolsPanel" data-role="button" 
+		            		data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+		            </div>		            		            
+        		</div> 
+			</div>			
+			<div data-role="content">
+				<div id="interviewQuesDiv"></div>            	
+			</div>			
+		</div>
+		<!-- end of interview questions page -->
+		
+		<!-- glossary page -->
+		<div data-role="page" id="technicalTermsPage">			
+			<div data-theme="a" data-role="header" data-position="inline">
+			    <div class="ui-grid-c">			    	           
+			    	<div class="ui-block-a" style="width: 10%">
+		                <a href="#homePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div>              		            	
+		            <div class="ui-block-b"style="width: 80%">
+		            	<h1 class="ui-title" data-role="heading" style="text-align : center">Technical Terms</h1>
+		            </div>
+		            <div class="ui-block-c" style="width: 10%">
+		            	<a href="#toolsPanel" data-role="button" 
+		            		data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+		            </div>		            		            
+        		</div> 
+			</div>			
+			<div data-role="content">
+				<div id="technicalTermsDiv" data-filter='true'></div>            	
+			</div>			
+		</div>
+		<!-- end of glossary page -->
+		
+		<!--articles home page -->		
+		<div data-role="page" id="articlesHomePage">		
+			<div data-theme="a" data-role="header" data-position="inline">
+				<div class="ui-grid-c">
+					<div class="ui-block-a" style="width: 10%">
+		                <a href="#homePage" data-role="button"  
+		                	data-icon="back" data-iconpos="notext" data-inline="true">Back</a>
+		            </div> 					    	            		            	
+					<div class="ui-block-b"style="width: 80%">
+						<h1 class="ui-title" data-role="heading" style="text-align : center">Shared articles</h1>
+					</div>
+					<div class="ui-block-c" style="width: 10%">
+						<a href="#toolsPanel" data-role="button" 
+							data-icon="bars" data-iconpos="notext" data-position="right">Menu</a>
+					</div>				           		            
+				</div> 
+			</div>			
+			<div data-role="content">				
+				<ul data-role="listview" class="ui-listview" id="articles-ulist">
+					<li class='articlesListElement'><a href="http://www.codingdojo.com/blog/5-myths-about-how-to-become-a-software-developer/">5-myths-about-how-to-become-a-software-developer</a></li>
+					<li class='articlesListElement'><a href="http://stackoverflow.com/research/developer-survey-2015">2015 Developer Survey on stackoverflow</a></li>
+					<li class='articlesListElement'><a href="http://fundersandfounders.com/software-engineer-salary-2014/">What is a Software Engineer Salary?-2014</a></li>
+					<li class='articlesListElement'><a href="https://blog.newrelic.com/2014/05/21/toolsforjavadevelopers/">18 Top Tools for Java developers-Blog</a></li>
+					<li class='articlesListElement'><a href="http://www.hongkiat.com/blog/tools-to-coding-online/">15 Websites To Test Your Codes Online</a></li>
+					<li class='articlesListElement'><a href="http://www.cio.com/article/2838445/careers-staffing/10-professional-development-tips-for-programmers.html">10 Professional-Development Tips for Programmers</a></li>
+					<li class='articlesListElement'><a href="http://lifehacker.com/5974605/learn-beginner-and-advanced-htmlcss-skills-for-free">Learn Beginner and Advanced HTML/CSS Skills for Free</a></li>
+					<li class='articlesListElement'><a href="https://codingsec.net/2016/05/9-demanded-programming-languages-2016/">9 Most Demanded Programming languages of 2016</a></li>
+					<li class='articlesListElement'><a href="http://www.techworm.net/2016/03/teach-code-10-simple-steps.html">Teach Yourself How To Code In These 10 Simple Steps</a></li>
+					<li class='articlesListElement'><a href="http://www.techworm.net/2016/04/things-become-top-quality-programmer.html">Things you should do to become a top quality programmer</a></li>
+					<li class='articlesListElement'><a href="http://www.techworm.net/2015/07/top-10-websites-to-learn-coding.html">Top 10 websites to learn coding</a></li>
+					<li class='articlesListElement'><a href="https://www.technotification.com/2016/04/facts-about-programming.html">Funny and Interesting Facts About Programming</a></li>
+					<li class='articlesListElement'><a href="https://simpleprogrammer.com/2014/06/30/step-step-path-becoming-great-software-developer/">Step By Step Path to Becoming a Great Software Developer</a></li>
+					<li class='articlesListElement'><a href="http://carlcheo.com/what-is-programming-what-do-programmers-do">What Is Programming And What Do Programmers Do? </a></li>
+					<li class='articlesListElement'><a href="http://fossbytes.com/10-cheat-sheets-programming-languages/">Must Have Cheat Sheet For Programmers</a></li>
+					<li class='articlesListElement'><a href="http://fossbytes.com/stack-overflow-documentation-developers-programmers/">Stack Overflow Launches 'Documentation' To Make Lives Of Programmers Easier</a></li>
+					<li class='articlesListElement'><a href="http://fossbytes.com/10-reasons-learn-java-programming-language/">10 Reasons Why You Should Learn Java Programming Language</a></li>
+					<li class='articlesListElement'><a href="http://fossbytes.com/do-best-programmers-use-google-stack-overflow-time/">Should A Programmer Use Google And Stack Overflow All The Time?</a></li>
+					
+				</ul>           	
+			</div>			
+		</div>
+		<!-- end of articles home page -->
+	</body>
+</html> 
