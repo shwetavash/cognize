@@ -88,7 +88,7 @@
  
  {"category":"Application and Web Servers",
  "subcategory":"WebSphere",
- "definition":"IBM WebSphere is an application server that helps you build, deploy and run applications with flexible, secure and Java EE-certified runtime environments—from lightweight production environments to large enterprise deployments.",
+ "definition":"IBM WebSphere is an application server that helps you build, deploy and run applications with flexible, secure and Java EE-certified runtime environmentsÂ—from lightweight production environments to large enterprise deployments.",
  "latestversion":"8.5.5",
  "yearReleased":"1998",
  "ownedBy":"IBM",
@@ -124,7 +124,7 @@
  "latestversion":"22.0.0.158",
  "yearReleased":"1996",
  "ownedBy":"Adobe Systems",
- "keyFeatures":"Flash gives Web designers the ability to import artwork using whatever bitmap or illustration tool they prefer, and to create animation and special effects, and add sound and interactivity.-Flash movies load faster and save on download time because Flash is vector based whereas HTML is not.-Flash intelligently ‘caches’ it’s movies so they don’t have to be reloaded.-Flash gives the user a more responsive ‘rich-client’ like experience."},
+ "keyFeatures":"Flash gives Web designers the ability to import artwork using whatever bitmap or illustration tool they prefer, and to create animation and special effects, and add sound and interactivity.-Flash movies load faster and save on download time because Flash is vector based whereas HTML is not.-Flash intelligently Â‘cachesÂ’ itÂ’s movies so they donÂ’t have to be reloaded.-Flash gives the user a more responsive Â‘rich-clientÂ’ like experience."},
  
  {"category":"Web and Graphic Design",
  "subcategory":"Dreamweaver",
@@ -176,7 +176,7 @@
  
  {"category":"Framework",
  "subcategory":"Struts 2",
- "definition":"Apache Struts 2 is an open-source web application framework for developing Java EE web applications. It uses and extends the Java Servlet API to encourage developers to adopt a model–view–controller (MVC) architecture. It retains the original architecture of original Struts framework.",
+ "definition":"Apache Struts 2 is an open-source web application framework for developing Java EE web applications. It uses and extends the Java Servlet API to encourage developers to adopt a modelÂ–viewÂ–controller (MVC) architecture. It retains the original architecture of original Struts framework.",
  "latestversion":"2.3.28.1",
  "yearReleased":"2006",
  "ownedBy":"Apache Software Foundation",
@@ -205,7 +205,7 @@
  "latestversion":"6.1.0",
  "yearReleased":"2009",
  "ownedBy":"Adobe Systems",
- "keyFeatures":"PhoneGap has a robust backend system that speeds up the development process and reduces developer’s efforts.It offers great flexibility to the developers as they can develop any type of mobile app without any serious efforts. Developers familiar with basic knowledge of HTML5, CSS3 and JavaScript can get started with PhoneGap.The app developed through phoneGap is for multiple platforms thus maintaining a high level of uniformity. It taps into the device’s hardware such as the camera, geo location, accelerometer and few others making use of the properties of the native resources of the device without compromising on the user experience."},
+ "keyFeatures":"PhoneGap has a robust backend system that speeds up the development process and reduces developerÂ’s efforts.It offers great flexibility to the developers as they can develop any type of mobile app without any serious efforts. Developers familiar with basic knowledge of HTML5, CSS3 and JavaScript can get started with PhoneGap.The app developed through phoneGap is for multiple platforms thus maintaining a high level of uniformity. It taps into the deviceÂ’s hardware such as the camera, geo location, accelerometer and few others making use of the properties of the native resources of the device without compromising on the user experience."},
   
  {"category":"Web Service Protocols",
  "subcategory":"SOAP",
@@ -425,7 +425,7 @@
 
 {"category":"Testing-Levels",
  "subcategory":"Beta Testing",
- "definition":"Beta testing takes place at customer’s site. It sends the system to users who install it and use it under real-world working conditions. It is the second phase of software testing in which a sampling of the intended audience tries the product out. The goal is to place your application in the hands of real users outside of your own engineering team to discover any flaws or issues from the user’s perspective that you would not want to have in your final, released version of the application.",
+ "definition":"Beta testing takes place at customerÂ’s site. It sends the system to users who install it and use it under real-world working conditions. It is the second phase of software testing in which a sampling of the intended audience tries the product out. The goal is to place your application in the hands of real users outside of your own engineering team to discover any flaws or issues from the userÂ’s perspective that you would not want to have in your final, released version of the application.",
  "latestversion":"",
  "yearReleased":"",
  "ownedBy":"",
@@ -445,7 +445,7 @@
  "latestversion":"",
  "yearReleased":"",
  "ownedBy":"",
- "keyFeatures":"The goal of performance testing is to identify the “weakest link” – there is inevitably a part of the system which, if it is made to respond faster, will result in the overall system running faster. It is sometimes a difficult task to identify which part of the system represents this critical path, and some test tools include instrumentation that runs on the server (agents) and reports transaction times, database access times, network overhead, and other server monitors, which can be analyzed together with the raw performance statistics."},
+ "keyFeatures":"The goal of performance testing is to identify the Â“weakest linkÂ” Â– there is inevitably a part of the system which, if it is made to respond faster, will result in the overall system running faster. It is sometimes a difficult task to identify which part of the system represents this critical path, and some test tools include instrumentation that runs on the server (agents) and reports transaction times, database access times, network overhead, and other server monitors, which can be analyzed together with the raw performance statistics."},
 
 {"category":"Testing-Types",
  "subcategory":"Load Testing",
@@ -465,7 +465,7 @@
 
 {"category":"Testing-Types",
  "subcategory":"Usability Testing",
- "definition":"In usability testing, the testers tests the ease with which the user interfaces can be used. It tests that whether the application or the product built is user-friendly or not. It also reveals whether users feel comfortable with your application or Web site according to different parameters – the flow, navigation and layout, speed and content – especially in comparison to prior or similar applications.",
+ "definition":"In usability testing, the testers tests the ease with which the user interfaces can be used. It tests that whether the application or the product built is user-friendly or not. It also reveals whether users feel comfortable with your application or Web site according to different parameters Â– the flow, navigation and layout, speed and content Â– especially in comparison to prior or similar applications.",
  "latestversion":"",
  "yearReleased":"",
  "ownedBy":"",
@@ -477,7 +477,7 @@
  "latestversion":"",
  "yearReleased":"",
  "ownedBy":"",
- "keyFeatures":"The security testing is performed to check whether there is any information leakage in the sense by encrypting the application or using wide range of software’s and hardware’s and firewall etc."},
+ "keyFeatures":"The security testing is performed to check whether there is any information leakage in the sense by encrypting the application or using wide range of softwareÂ’s and hardwareÂ’s and firewall etc."},
 
 {"category":"Testing-Types",
  "subcategory":"Portability Testing",
