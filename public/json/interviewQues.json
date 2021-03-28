@@ -124,7 +124,7 @@
 
 {"category":"JDBC",
 "question":"2.What is connection pooling?",
-"answer":"Connection pooling is the mechanism by which we reuse the recourse like connection objects  which are needed to make connection with database .In this mechanism client are not required every time make new connection and then interact with database instead of that connection objects are stored in connection pool and client will get it from there. so it’s a best way to share a server resources among the client and enhance the application performance."},
+"answer":"Connection pooling is the mechanism by which we reuse the recourse like connection objects  which are needed to make connection with database .In this mechanism client are not required every time make new connection and then interact with database instead of that connection objects are stored in connection pool and client will get it from there. so itÂ’s a best way to share a server resources among the client and enhance the application performance."},
 
 {"category":"JDBC",
 "question":"3.What are the common components of JDBC API?",
@@ -192,7 +192,7 @@
 
 {"category":"Servlets",
 "question":"2.Explain life cycle of a Servlet?",
-"answer":"The life cyce of a servlet is the process from its creation uptil its destruction.It is controlled by the container in which the servlet has been deployed. When a request is mapped to a servlet, the container performs the following steps.1.If an instance of the servlet does not exist, the web container a).Loads the servlet class.b).Creates an instance of the servlet class.c).Initializes the servlet instance by calling the init method. 2.Invokes the service method, passing request and response objects.3.If the container needs to remove the servlet, it finalizes the servlet by calling the servlet’s destroy method and then it is garbage collected by the garbage collector of the JVM."},
+"answer":"The life cyce of a servlet is the process from its creation uptil its destruction.It is controlled by the container in which the servlet has been deployed. When a request is mapped to a servlet, the container performs the following steps.1.If an instance of the servlet does not exist, the web container a).Loads the servlet class.b).Creates an instance of the servlet class.c).Initializes the servlet instance by calling the init method. 2.Invokes the service method, passing request and response objects.3.If the container needs to remove the servlet, it finalizes the servlet by calling the servletÂ’s destroy method and then it is garbage collected by the garbage collector of the JVM."},
 
 {"category":"Servlets",
 "question":"3.When is the servlet object created?",
@@ -260,7 +260,7 @@
 
 {"category":"Servlets",
 "question":"19.What is the difference between JSP and Servlets ?",
-"answer":"Serlvet is html in Java but JSP is Java in html. JSP is a webpage scripting language that can generate dynamic content while Servlets are Java programs that are already compiled which also creates dynamic web content. Servlets run faster compared to JSP. JSP can be compiled into Java Servlets. It’s easier to code in JSP than in Java Servlets. In MVC, jsp act as a view and servlet act as a controller. JSP are generally preferred when there is not much processing of data required. But servlets are best for use when there is more processing and manipulation involved. The advantage of JSP programming over servlets is that we can build custom tags which can directly call Java beans. There is no such facility in servlets. We can achieve functionality of JSP at client side by running JavaScript at client side. There are no such methods for servlets."},
+"answer":"Serlvet is html in Java but JSP is Java in html. JSP is a webpage scripting language that can generate dynamic content while Servlets are Java programs that are already compiled which also creates dynamic web content. Servlets run faster compared to JSP. JSP can be compiled into Java Servlets. ItÂ’s easier to code in JSP than in Java Servlets. In MVC, jsp act as a view and servlet act as a controller. JSP are generally preferred when there is not much processing of data required. But servlets are best for use when there is more processing and manipulation involved. The advantage of JSP programming over servlets is that we can build custom tags which can directly call Java beans. There is no such facility in servlets. We can achieve functionality of JSP at client side by running JavaScript at client side. There are no such methods for servlets."},
 
 {"category":"Servlets",
 "question":"20.What is Servlet mapping?",
@@ -292,7 +292,7 @@
 
 {"category":"Spring",
 "question":"7.What are two types of IoC containers? Explain.",
-"answer":"The two types of IoC containers are BeanFactory container and ApplicationContext container. The BeanFactory interface provides an advanced configuration mechanism capable of managing any type of object. It is usually preferred where the resources are limited like mobile devices or applet based applications. Whereas ApplicationContext is a sub interface of BeanFactory. It adds easier integration with Spring’s AOP features; message resource handling (for use in internationalization), event publication; and application-layer specific contexts such as the WebApplicationContext for use in web applications. In short, the BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality. "},
+"answer":"The two types of IoC containers are BeanFactory container and ApplicationContext container. The BeanFactory interface provides an advanced configuration mechanism capable of managing any type of object. It is usually preferred where the resources are limited like mobile devices or applet based applications. Whereas ApplicationContext is a sub interface of BeanFactory. It adds easier integration with SpringÂ’s AOP features; message resource handling (for use in internationalization), event publication; and application-layer specific contexts such as the WebApplicationContext for use in web applications. In short, the BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality. "},
 
 {"category":"Spring",
 "question":"8.What is the difference between BeanFactory and ApplicationContext?",
@@ -392,7 +392,7 @@
 
 {"category":"Hibernate",
 "question":"12.What are Callback interfaces?",
-"answer":"Callback interfaces allow the application to receive a notification when something interesting happens to an object—for example, when an object is loaded, saved, or deleted. Hibernate applications don't need to implement these callbacks, but they're useful for implementing certain kinds of generic functionality."},
+"answer":"Callback interfaces allow the application to receive a notification when something interesting happens to an objectÂ—for example, when an object is loaded, saved, or deleted. Hibernate applications don't need to implement these callbacks, but they're useful for implementing certain kinds of generic functionality."},
 
 {"category":"Hibernate",
 "question":"13.Is Hibernate Session thread safe?",
@@ -400,14 +400,14 @@
 
 {"category":"Hibernate",
 "question":"14.What is difference between Hibernate Session get() and load() method?",
-"answer":"Hibernate session comes with different methods to load data from database. get and load are most used methods, at first look they seems similar but there are some differences between them. get() loads the data as soon as it’s called whereas load() returns a proxy object and loads data only when it’s actually required, so load() is better because it support lazy loading. Since load() throws exception when data is not found, we should use it only when we know data exists. We should use get() when we want to make sure data exists in the database."},
+"answer":"Hibernate session comes with different methods to load data from database. get and load are most used methods, at first look they seems similar but there are some differences between them. get() loads the data as soon as itÂ’s called whereas load() returns a proxy object and loads data only when itÂ’s actually required, so load() is better because it support lazy loading. Since load() throws exception when data is not found, we should use it only when we know data exists. We should use get() when we want to make sure data exists in the database."},
 
 {"category":"Hibernate",
 "question":"15.What is Hibernate caching?",
 "answer":"Hibernate caches query data to make application faster. The idea behind cache is to reduce the number of database queries, hence reducing the throughput time of the application. So it can give fast application performance. cache is enabled by default and there is no way to disable it. However hibernate provides methods through which we can delete selected objects from the cache or clear the cache completely. Any object cached in a session will not be visible to other sessions and when the session is closed, all the cached objects will also be lost."},
 {"category":"Hibernate",
 "question":"16.Explain Hibernate save(), saveOrUpdate() and persist() methods?",
-"answer":"Hibernate save can be used to save entity to database. It can be invoked without a transaction and if we have mapping entities, then only the primary object gets saved causing data inconsistencies. Also save returns the generated id immediately. Hibernate persist is similar to save with transaction infact better than save because we can’t use it outside the boundary of transaction, so all the object mappings are preserved. Also persist doesn’t return the generated id immediately, so data persistence happens when needed. Hibernate saveOrUpdate results into insert or update queries based on the provided data. If the data is present in the database, update query is executed. We can use saveOrUpdate() without transaction also, but there will be issues with mapped objects not getting saved if session is not flushed. "},
+"answer":"Hibernate save can be used to save entity to database. It can be invoked without a transaction and if we have mapping entities, then only the primary object gets saved causing data inconsistencies. Also save returns the generated id immediately. Hibernate persist is similar to save with transaction infact better than save because we canÂ’t use it outside the boundary of transaction, so all the object mappings are preserved. Also persist doesnÂ’t return the generated id immediately, so data persistence happens when needed. Hibernate saveOrUpdate results into insert or update queries based on the provided data. If the data is present in the database, update query is executed. We can use saveOrUpdate() without transaction also, but there will be issues with mapped objects not getting saved if session is not flushed. "},
 
 {"category":"Hibernate",
 "question":"17.What are the states of object in Hibernate?",
